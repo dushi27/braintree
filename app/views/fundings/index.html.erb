@@ -1,0 +1,33 @@
+<h1>Listing fundings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Account number</th>
+      <th>Routing no</th>
+      <th>Agreed</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fundings.each do |funding| %>
+      <tr>
+        <td><%= funding.email %></td>
+        <td><%= funding.phone %></td>
+        <td><%= funding.account_number %></td>
+        <td><%= funding.routing_no %></td>
+        <td><%= funding.agreed %></td>
+        <td><%= link_to 'Show', funding %></td>
+        <td><%= link_to 'Edit', edit_funding_path(funding) %></td>
+        <td><%= link_to 'Destroy', funding, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Funding', new_funding_path %>

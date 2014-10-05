@@ -1,0 +1,37 @@
+<h1>Listing businesses</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Leagal name</th>
+      <th>Dba name</th>
+      <th>Tax</th>
+      <th>Street address</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Zip</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @businesses.each do |business| %>
+      <tr>
+        <td><%= business.leagal_name %></td>
+        <td><%= business.dba_name %></td>
+        <td><%= business.tax_id %></td>
+        <td><%= business.street_address %></td>
+        <td><%= business.city %></td>
+        <td><%= business.state %></td>
+        <td><%= business.zip %></td>
+        <td><%= link_to 'Show', business %></td>
+        <td><%= link_to 'Edit', edit_business_path(business) %></td>
+        <td><%= link_to 'Destroy', business, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Business', new_business_path %>

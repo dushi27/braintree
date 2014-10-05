@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @funding.email %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @funding.phone %>
+</p>
+
+<p>
+  <strong>Account number:</strong>
+  <%= @funding.account_number %>
+</p>
+
+<p>
+  <strong>Routing no:</strong>
+  <%= @funding.routing_no %>
+</p>
+
+<p>
+  <strong>Agreed:</strong>
+  <%= @funding.agreed %>
+</p>
+
+<%= link_to 'Edit', edit_funding_path(@funding) %> |
+<%= link_to 'Back', fundings_path %>
