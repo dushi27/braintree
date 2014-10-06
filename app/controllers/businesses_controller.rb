@@ -9,6 +9,8 @@ class BusinessesController < ApplicationController
   end
   
   def new
+    raise params.inspect
+    @individual = Individual.find(params[:format])
     @business = Business.new
   end
 
@@ -17,10 +19,12 @@ class BusinessesController < ApplicationController
 
   def create
     @business = Business.new(business_params)
-
+    @business.individual_id = @individual.id
+    @business.save
+    
     respond_to do |format|
       if @business.save
-        format.html { redirect_to @business, notice: 'Business was successfully created.' }
+        format.html { redirect_to new_funding_path, notice: 'Business was successfully created.' }
         format.json { render :show, status: :created, location: @business }
       else
         format.html { render :new }
@@ -55,6 +59,6 @@ class BusinessesController < ApplicationController
     end
 
     def business_params
-      params.require(:business).permit(:leagal_name, :dba_name, :tax_id, :street_address, :city, :state, :zip)
+      params.require(:business).permit(:leagal_name, :dba_name, :tax_id, :street_address, :city, :state, :zip, :individual_id)
     end
 end

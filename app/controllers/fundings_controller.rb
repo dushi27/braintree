@@ -55,6 +55,6 @@ class FundingsController < ApplicationController
     end
   
     def funding_params
-      params.require(:funding).permit(:email, :phone, :account_number, :routing_no, :agreed)
+      params.require(:funding).permit(:email, :phone, :account_number, :routing_no, :agreed, :individual_id)
     end
 end

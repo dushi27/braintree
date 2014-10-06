@@ -20,7 +20,7 @@ class IndividualsController < ApplicationController
 
     respond_to do |format|
       if @individual.save
-        format.html { redirect_to @individual, notice: 'Individual was successfully created.' }
+        format.html { redirect_to new_business_path(params[:id => @individual.id])}
         format.json { render :show, status: :created, location: @individual }
       else
         format.html { render :new }

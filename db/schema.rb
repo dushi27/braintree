@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141005232737) do
+ActiveRecord::Schema.define(version: 20141005233548) do
 
   create_table "businesses", force: true do |t|
     t.string   "leagal_name"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20141005232737) do
     t.integer  "zip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "individual_id"
   end
 
   create_table "fundings", force: true do |t|
@@ -33,6 +34,7 @@ ActiveRecord::Schema.define(version: 20141005232737) do
     t.boolean  "agreed"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "individual_id"
   end
 
   create_table "individuals", force: true do |t|
