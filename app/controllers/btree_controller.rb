@@ -4,7 +4,7 @@ class BtreeController < ApplicationController
   def get_btree
   end
   
-  def create_submerchant 
+  def create_submerchant
     result = Braintree::MerchantAccount.create(
         :individual => {
           :first_name => "Jane",
@@ -40,7 +40,7 @@ class BtreeController < ApplicationController
         },
         :tos_accepted => true,
         :master_merchant_account_id => "rgw233jmnzhxz3fs",  
-      :id => "hello77"
+        :id => "#{params[:id]}"
       )
     
     respond_to do |format|
@@ -59,8 +59,8 @@ class BtreeController < ApplicationController
     require "braintree"
 
     Braintree::Configuration.environment = :sandbox
-    Braintree::Configuration.merchant_id = 
-    Braintree::Configuration.public_key = 
-    Braintree::Configuration.private_key = 
+    Braintree::Configuration.merchant_id = 'wnvz9cp784t4nfx5'
+    Braintree::Configuration.public_key = '5txjyzgkjx5nx2bp'
+    Braintree::Configuration.private_key = '03313b7aa9454f3a5ea746bb0f08c0b0'
   end
 end

@@ -56,5 +56,5 @@ class IndividualsController < ApplicationController
 
     def individual_params
       params.require(:individual).permit(:first_name, :last_name, :email, :phone, :date_of_birth, :ssn, :street_address, :city, :state, :zip)
-    end
+    end  
 end
