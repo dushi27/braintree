@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   resources :individuals
   
   root 'individuals#new'
+  
+  post 'btree/create_submerchant' => 'btree#create_submerchant'
+  get 'btree/get_btree' => 'btree#get_btree'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
