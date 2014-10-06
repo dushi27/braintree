@@ -60,7 +60,7 @@ class BtreeController < ApplicationController
 
     Braintree::Configuration.environment = :sandbox
     Braintree::Configuration.merchant_id = 'wnvz9cp784t4nfx5'
-    Braintree::Configuration.public_key = '5txjyzgkjx5nx2bp'
-    Braintree::Configuration.private_key = '03313b7aa9454f3a5ea746bb0f08c0b0'
+    Braintree::Configuration.public_key = '76m5qdzdnv2zqbhz'
+    Braintree::Configuration.private_key = '16404a8c85467295c7f4b322d8281972'
   end
 end

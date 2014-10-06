@@ -1,5 +1,5 @@
 <%= form_tag("btree/create_submerchant", method: "post") do %>
-<%= label_tag(:id, "Merchant ID:") %>
-  <%= text_field_tag(:id) %>
-  <%= submit_tag("Create Merchant") %>
+  <%= label_tag :id, "Merchant ID:"%>
+  <%= text_field_tag :id %>
+  <%= submit_tag "Create Merchant", class:'btn btn-primary' %>
 <% end %>
