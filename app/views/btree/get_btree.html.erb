@@ -1,5 +1,49 @@
 <%= form_tag("btree/create_submerchant", method: "post") do %>
   <%= label_tag :id, "Merchant ID:"%>
-  <%= text_field_tag :id %>
+  <%= text_field_tag :id %><br>
+
+  <%= label_tag :first_name, "First Name:"%>
+  <%= text_field_tag :first_name %><br>
+
+  <%= label_tag :last_name, "Last Name:"%>
+  <%= text_field_tag :last_name %><br>
+
+  <%= label_tag :email, "Email:"%>
+  <%= email_field_tag :email %><br>
+
+  <%= label_tag :dob, "Date of Birth:"%>
+  <%= date_field_tag :dob%><br>
+
+  <%= label_tag :street, "Street Address:"%>
+  <%= text_field_tag :street %><br>
+
+  <%= label_tag :city, "City:"%>
+  <%= text_field_tag :city %><br>
+
+  <%= label_tag :state, "State:"%>
+  <%= text_field_tag :state %><br>
+
+  <%= label_tag :zip, "Zip Code:"%>
+  <%= text_field_tag :zip %><br>
+
+  <%= label_tag :legal_name, "Legal Name:"%>
+  <%= text_field_tag :legal_name %><br>
+
+  <%= label_tag :dba, "DBA Name:"%>
+  <%= text_field_tag :dba %><br>
+
+  <%= label_tag :tax_id, "Tax ID:"%>
+  <%= text_field_tag :tax_id %><br>
+
+  <%= label_tag :acctno, "Bank Account No.:"%>
+  <%= text_field_tag :acctno %><br>
+
+  <%= label_tag :routing, "Bank Routing Number:"%>
+  <%= text_field_tag :routing %><br>
+
+  <%= label_tag :tos, "Policies Agreement:"%>
+  <%= check_box_tag :tos %><br>
+
+
   <%= submit_tag "Create Merchant", class:'btn btn-primary' %>
 <% end %>

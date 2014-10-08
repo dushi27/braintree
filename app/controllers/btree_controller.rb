@@ -7,38 +7,28 @@ class BtreeController < ApplicationController
   def create_submerchant
     result = Braintree::MerchantAccount.create(
         :individual => {
-          :first_name => "Jane",
-          :last_name => "Doe",
-          :email => "jane@14ladders.com",
-          :phone => "5553334444",
-          :date_of_birth => "1981-11-19",
-          :ssn => "456-45-4567",
+          :first_name =>  "#{params[:first_name]}",
+          :last_name =>  "#{params[:last_name]}",
+          :email => "#{params[:email]}",
+          :date_of_birth => "#{params[:dob]}",
           :address => {
-            :street_address => "111 Main St",
-            :locality => "Chicago",
-            :region => "IL",
-            :postal_code => "60622"
+            :street_address => "#{params[:street]}",
+            :locality => "#{params[:city]}",
+            :region => "#{params[:state]}",
+            :postal_code => "#{params[:zip]}"
           }
         },
         :business => {
-          :legal_name => "Jane's Ladders",
-          :dba_name => "Jane's Ladders",
-          :tax_id => "98-7654321",
-          :address => {
-            :street_address => "111 Main St",
-            :locality => "Chicago",
-            :region => "IL",
-            :postal_code => "60622"
-          }
+          :legal_name => "#{params[:legal_name]}",
+          :dba_name => "#{params[:dba]}",
+          :tax_id => "#{params[:tax_id]}"          
         },
         :funding => {
-          :destination => Braintree::MerchantAccount::FundingDestination::Bank,
-          :email => "funding@blueladders.com",
-          :mobile_phone => "5555555555",
-          :account_number => "1123581321",
-          :routing_number => "071101307"
+          :destination => "bank",
+          :account_number => "#{params[:acctno]}",
+          :routing_number => "#{params[:routing]}"
         },
-        :tos_accepted => true,
+        :tos_accepted => "#{params[:tos]}",
         :master_merchant_account_id => "rgw233jmnzhxz3fs",  
         :id => "#{params[:id]}"
       )
@@ -47,7 +37,7 @@ class BtreeController < ApplicationController
       if result.success?
         format.html { redirect_to root_path, notice: "#{result.merchant_account.id} is #{result.merchant_account.status}" }
       else
-        format.html { redirect_to root_path, notice: "#{result.errors}"}
+        format.html { redirect_to root_path, notice: "#{result.errors.each {|err| puts err.message + ","}}"}
       end
     end   
     
@@ -58,9 +48,6 @@ class BtreeController < ApplicationController
     require "rubygems"
     require "braintree"
 
-    Braintree::Configuration.environment = :sandbox
-    Braintree::Configuration.merchant_id = 'wnvz9cp784t4nfx5'
-    Braintree::Configuration.public_key = '76m5qdzdnv2zqbhz'
-    Braintree::Configuration.private_key = '16404a8c85467295c7f4b322d8281972'
+    add API keys here
   end
 end
