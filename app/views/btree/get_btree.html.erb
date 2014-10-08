@@ -1,49 +1,110 @@
 <%= form_tag("btree/create_submerchant", method: "post") do %>
-  <%= label_tag :id, "Merchant ID:"%>
-  <%= text_field_tag :id %><br>
+  <div class="form-group"> 
+    <div class="container">
+      <%= label_tag :id, "Merchant ID:"%>
+      <%= text_field_tag :id%>
+    </div>
+  </div>
 
-  <%= label_tag :first_name, "First Name:"%>
-  <%= text_field_tag :first_name %><br>
+   <div class="form-group"> 
+    <div class="container">
+      <%= label_tag :first_name, "First Name:"%>
+      <%= text_field_tag :first_name%>
+    </div>
+   </div>
 
-  <%= label_tag :last_name, "Last Name:"%>
-  <%= text_field_tag :last_name %><br>
+  <div class="form-group"> 
+    <div class="container">
+      <%= label_tag :last_name, "Last Name:"%>
+      <%= text_field_tag :last_name%>  
+    </div>
+ </div>
 
-  <%= label_tag :email, "Email:"%>
-  <%= email_field_tag :email %><br>
+ <div class="form-group"> 
+   <div class="container">
+    <%= label_tag :email, "Email:"%>
+    <%= email_field_tag :email%>
+   </div>
+ </div>
 
-  <%= label_tag :dob, "Date of Birth:"%>
-  <%= date_field_tag :dob%><br>
+ <div class="form-group"> 
+    <div class="container">
+      <%= label_tag :dob, "Date of Birth:"%>
+      <%= date_field_tag :dob%>
+    </div>
+ </div>
 
+        <div class="form-group"> 
+    <div class="container">
   <%= label_tag :street, "Street Address:"%>
-  <%= text_field_tag :street %><br>
+  <%= text_field_tag :street%>
+        </div>
+ </div>
 
-  <%= label_tag :city, "City:"%>
-  <%= text_field_tag :city %><br>
+ <div class="form-group"> 
+    <div class="container">
+      <%= label_tag :city, "City:"%>
+      <%= text_field_tag :city%>
+    </div>
+ </div>
 
-  <%= label_tag :state, "State:"%>
-  <%= text_field_tag :state %><br>
+ <div class="form-group"> 
+    <div class="container">
+      <%= label_tag :state, "State:"%>
+      <%= text_field_tag :state%>
+    </div>
+ </div>
 
-  <%= label_tag :zip, "Zip Code:"%>
-  <%= text_field_tag :zip %><br>
+ <div class="form-group"> 
+    <div class="container">
+      <%= label_tag :zip, "Zip Code:"%>
+      <%= text_field_tag :zip%>
+    </div>
+ </div>
 
-  <%= label_tag :legal_name, "Legal Name:"%>
-  <%= text_field_tag :legal_name %><br>
+ <div class="form-group"> 
+    <div class="container">
+      <%= label_tag :legal_name, "Legal Name:"%>
+      <%= text_field_tag :legal_name%>
+    </div>
+ </div>
 
-  <%= label_tag :dba, "DBA Name:"%>
-  <%= text_field_tag :dba %><br>
+ <div class="form-group"> 
+    <div class="container">
+      <%= label_tag :dba, "DBA Name:"%>
+      <%= text_field_tag :dba%>
+    </div>
+ </div>
 
-  <%= label_tag :tax_id, "Tax ID:"%>
-  <%= text_field_tag :tax_id %><br>
+ <div class="form-group"> 
+    <div class="container">
+      <%= label_tag :tax_id, "Tax ID:"%>
+      <%= text_field_tag :tax_id%>
+    </div>
+ </div>
 
-  <%= label_tag :acctno, "Bank Account No.:"%>
-  <%= text_field_tag :acctno %><br>
+  <div class="form-group"> 
+    <div class="container">
+      <%= label_tag :acctno, "Bank Account No.:"%>
+      <%= text_field_tag :acctno%>
+    </div>
+ </div>
 
-  <%= label_tag :routing, "Bank Routing Number:"%>
-  <%= text_field_tag :routing %><br>
+ <div class="form-group"> 
+    <div class="container">
+      <%= label_tag :routing, "Bank Routing Number:"%>
+      <%= text_field_tag :routing%>
+    </div>
+ </div>
 
-  <%= label_tag :tos, "Policies Agreement:"%>
-  <%= check_box_tag :tos %><br>
+ <div class="form-group"> 
+    <div class="container">
+      <%= label_tag :tos, ("I agree to the #{link_to 'terms and conditions', root_path}").html_safe%>
+      <%= check_box_tag :tos%>
+     </div>
+ </div>
 
-
-  <%= submit_tag "Create Merchant", class:'btn btn-primary' %>
+ <div class="form-group">
+   <%= submit_tag "Create Merchant", class: "btn-group btn btn-lg btn-success"  %>
+ </div>
 <% end %>

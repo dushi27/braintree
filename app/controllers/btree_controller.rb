@@ -48,6 +48,6 @@ class BtreeController < ApplicationController
     require "rubygems"
     require "braintree"
 
-    add API keys here
+    API keys
   end
 end
